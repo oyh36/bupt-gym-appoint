@@ -31,12 +31,12 @@ jobs:
         BUPT_VPN_PASS: ${{secrets.VPN_PASS}}
         BUPT_DOOR_PASS: ${{secrets.DOOR_PASS}}
         BUPT_TIME: ${{secrets.BUPT_TIME}}
-    # - name: Sending message
-    #   uses: yakumioto/serverchan-action@v2
-    #   with:
-    #     key: ${{ secrets.SERVERCHAN_KEY}}
-    #     text: 预约健身房(${{env.APPOINT_DATE}} ${{env.APPOINT_HOUR}})${{env.APPOINT_STATUS}}{消息标题}
-    #     desp: 预约健身房(${{env.APPOINT_DATE}} ${{env.APPOINT_HOUR}})${{env.APPOINT_STATUS}}。在https://gym.byr.moe/my.php 中取消。
+     - name: Sending message
+       uses: yakumioto/serverchan-action@v2
+       with:
+         key: ${{ secrets.SERVERCHAN_KEY}}
+         text: 预约健身房(${{env.APPOINT_DATE}} ${{env.APPOINT_HOUR}})${{env.APPOINT_STATUS}}{消息标题}
+         desp: 预约健身房(${{env.APPOINT_DATE}} ${{env.APPOINT_HOUR}})${{env.APPOINT_STATUS}}。在https://gym.byr.moe/my.php 中取消。
     - name: Send mail
       uses: dawidd6/action-send-mail@v3
       with:
